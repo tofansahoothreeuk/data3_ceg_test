@@ -1,0 +1,28 @@
+version: 2
+
+sources:
+  - name: ato_oss_dataops
+    loader: 'Source tables loaded from ADF or FIVETRAN'
+    tables:
+
+    - name: ato_dataops_src
+      description: "Transaction data for dbt demo"
+      columns:
+          - name: id
+            description: "Primary Key"
+
+          - name: band_id
+            description: "Pay band"
+
+          - name: job_desc
+            description: "Job description"
+
+
+    - name: ato_lookup_src
+      description: "Reference data for dbt demo"
+      columns:
+          - name: id
+            description: "Pay band id - primary Key"
+
+          - name: pay_band
+            description: "Pay band description"
