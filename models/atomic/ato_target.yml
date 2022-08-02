@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: ato_dataops_stg
+    description: "Transaction data for dbt demo"
+    columns:
+      - name: id
+        description: "Primary Key"
+        tests:
+          - unique
+      - name: band_id
+        description: "Pay band"
+      - name: job_desc
+        description: "Job description"
+  - name: ato_lookup_stg
+    description: "Reference data for dbt demo"
+    columns:
+      - name: id
+        description: "Pay band id - primary Key"
+        tests:
+          - unique
+      - name: pay_band
+        description: "Pay band description"
+        tests:
+          - not_null
