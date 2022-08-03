@@ -33,17 +33,15 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
   dbtpoc:
-    # Applies to all files under models/example/
-    example:
-      materialized: view
+    # Applies to all files under models/
     atomic:
       +schema: ATO_OSS_DATAOPS
-      materialized: view
+      +materialized: view
 
     integration:
       +schema: INT_OSS_DATAOPS
-      materialized: view
+      +materialized: view
 
     presentation:
       +schema: PRS_OSS_DATAOPS
-      materialized: view
+      +materialized: view
