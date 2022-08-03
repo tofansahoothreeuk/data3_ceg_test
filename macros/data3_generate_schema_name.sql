@@ -8,21 +8,9 @@
         {{ default_schema }}
 
     {%- else -%}
+              
+        {{ custom_schema_name | trim }}
         
-        {%- if target.name|upper == 'DEFAULT' -%}
-        
-            {{ default_schema }}_{{ custom_schema_name | trim }}
-
-        {%- elif target.name|upper == 'DEFAULTNOENV' -%}
-
-            {{ default_schema }}_{{ custom_schema_name[4:] | trim }}
-
-        {%- else -%}
-        
-            {{ custom_schema_name | trim }}
-        
-        {%- endif -%}
-
     {%- endif -%}
 
 {%- endmacro %}
