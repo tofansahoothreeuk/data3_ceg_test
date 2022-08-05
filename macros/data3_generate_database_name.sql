@@ -2,14 +2,13 @@
 
 {% macro generate_database_name(custom_database_name=none, node=none) -%}
 
-    {%- set default_database = env_var('DBT_TARGET_DATABASE') -%}
-    {%- if custom_database_name is none -%}
+    {%- if env_var('DBT_TARGET_DATABASE') is none -%}
 
-        {{ default_database }}
+        {{ target.database }}
 
     {%- else -%}
 
-        {{ custom_database_name | trim }}
+        {{ env_var('DBT_TARGET_DATABASE') }}
 
     {%- endif -%}
 
